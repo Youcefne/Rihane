@@ -82,6 +82,85 @@
       font-weight: bold;
       color: #e63946;
     }
+    
+    /* Nouveau style pour le bouton d'urgence */
+    .urgent-btn {
+      display: inline-block;
+      background-color: #e63946;
+      color: white;
+      padding: 15px 30px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.1em;
+      margin-top: 15px;
+      box-shadow: 0 0 20px rgba(230, 57, 70, 0.6);
+      position: relative;
+      overflow: hidden;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.3s, box-shadow 0.3s;
+      animation: pulse 1.5s infinite alternate, emergencyLights 0.5s infinite;
+    }
+    
+    .urgent-btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 30px rgba(230, 57, 70, 0.8);
+    }
+    
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+      }
+      100% {
+        transform: scale(1.03);
+      }
+    }
+    
+    @keyframes emergencyLights {
+      0% {
+        box-shadow: 0 0 20px rgba(230, 57, 70, 0.8);
+      }
+      25% {
+        box-shadow: 0 0 30px rgba(255, 255, 255, 0.8);
+      }
+      50% {
+        box-shadow: 0 0 20px rgba(230, 57, 70, 0.8);
+      }
+      75% {
+        box-shadow: 0 0 30px rgba(255, 255, 255, 0.8);
+      }
+      100% {
+        box-shadow: 0 0 20px rgba(230, 57, 70, 0.8);
+      }
+    }
+    
+    .urgent-btn::before {
+      content: "";
+      position: absolute;
+      top: -10px;
+      left: -10px;
+      right: -10px;
+      bottom: -10px;
+      border-radius: 15px;
+      background: linear-gradient(45deg, #e63946, white, #e63946);
+      background-size: 200% 200%;
+      animation: gradientFlash 2s linear infinite;
+      opacity: 0.3;
+      z-index: -1;
+    }
+    
+    @keyframes gradientFlash {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
   </style>
 </head>
 <body>
@@ -94,16 +173,16 @@
 <div class="container">
   <h2>🙏 Une urgence vitale</h2>
   <p>
-    Grâce à vous, un des enfants a déjà pu être sauvé. Mais aujourd’hui, sa sœur attend encore…
+    Grâce à vous, un des enfants a déjà pu être sauvé. Mais aujourd'hui, sa sœur attend encore…
     Ne laissons pas des parents devoir choisir entre leurs enfants.
   </p>
 
-  <h3 class="highlight">💉 Rihane (10 ans) et Youcef (11 mois) souffrent d’une maladie grave : la bêta-thalassémie majeure.</h3>
+  <h3 class="highlight">💉 Rihane (10 ans) et Youcef (11 mois) souffrent d'une maladie grave : la bêta-thalassémie majeure.</h3>
 
   <p>Rihane devrait jouer, danser, vivre comme une enfant. Mais elle alterne entre école et hôpital, chaque semaine sous transfusion.</p>
   <p>Et il y a quelques mois, le verdict est tombé pour son petit frère Youcef…</p>
 
-  <p>💔 Deux enfants, deux urgences… et des parents à bout, sans aide de l’État.</p>
+  <p>💔 Deux enfants, deux urgences… et des parents à bout, sans aide de l'État.</p>
 
   <p>Leur seule chance ? <span class="highlight">Une greffe de moelle osseuse</span> coûteuse que la famille ne peut financer seule.</p>
 
@@ -123,7 +202,7 @@
   <div class="don-section">
     <h2>🆘 Vous pouvez changer leur destin</h2>
     <p>Un simple don peut leur offrir une chance de guérir. Merci pour votre soutien ❤️</p>
-    <a class="don-btn" href="https://www.paypal.com/donate/?hosted_button_id=GYEEUTQ2MV3H6" target="_blank">Faire un don maintenant</a>
+    <a class="urgent-btn" href="https://www.paypal.com/donate/?hosted_button_id=GYEEUTQ2MV3H6" target="_blank">FAIRE UN DON URGENT</a>
   </div>
 </div>
 
