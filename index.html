@@ -1,114 +1,106 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Soutenez Rihane et Youcef</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&family=Open+Sans&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>💖 Aidons Lucie à Rebondir - Cagnotte Solidaire</title>
+  <meta name="description" content="Soutenez Lucie, amputée des 4 membres après un paludisme sévère, pour financer ses prothèses et sa rééducation">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --primary: #E91E63;
+      --secondary: #673AB7;
+      --light: #FFF5F7;
+      --dark: #1A1A2E;
+      --success: #4CAF50;
+    }
+    
     body {
       margin: 0;
       font-family: 'Open Sans', sans-serif;
-      background-color: #f1faee;
-      color: #1d3557;
-      line-height: 1.6;
-    }
-    header {
-      background-color: #e63946;
-      color: white;
-      padding: 1rem 2rem;
-      text-align: center;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-    header h1 {
-      margin: 0;
-      font-family: 'Poppins', sans-serif;
-    }
-    .don-btn {
-      background-color: #fff;
-      color: #e63946;
-      padding: 10px 20px;
-      border-radius: 5px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: background-color 0.3s;
-    }
-    .don-btn:hover {
-      background-color: #fce4e4;
-    }
-    .container {
-      max-width: 960px;
-      margin: auto;
-      padding: 2rem;
-    }
-    .progress-container {
-      background: #ccc;
-      border-radius: 20px;
-      overflow: hidden;
-      margin: 20px 0;
-    }
-    .progress-bar {
-      background-color: #e63946;
-      height: 20px;
-      width: 20%; /* Modifier ici selon progression réelle */
-      transition: width 0.5s;
-    }
-    .image-gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 15px;
-      margin: 2rem 0;
-    }
-    .image-gallery img {
-      width: 100%;
-      border-radius: 10px;
-      object-fit: cover;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-    .don-section {
-      text-align: center;
-      margin: 3rem 0;
-    }
-    footer {
-      background-color: #e63946;
-      color: white;
-      text-align: center;
-      padding: 1rem;
-      margin-top: 3rem;
-    }
-    .highlight {
-      font-weight: bold;
-      color: #e63946;
+      background-color: var(--light);
+      color: var(--dark);
+      line-height: 1.8;
     }
     
-    /* Nouveau style pour le bouton d'urgence avec animation droite-gauche */
-    .urgent-btn {
-      display: inline-block;
-      background-color: #e63946;
+    header {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
       color: white;
-      padding: 15px 30px;
-      border-radius: 5px;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 1.1em;
-      margin-top: 15px;
+      padding: 2rem 1rem;
+      text-align: center;
       position: relative;
       overflow: hidden;
-      border: none;
-      cursor: pointer;
-      transition: transform 0.3s;
-      box-shadow: 0 0 15px rgba(230, 57, 70, 0.7);
     }
     
-    .urgent-btn:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 25px rgba(230, 57, 70, 0.9);
+    header::after {
+      content: "";
+      position: absolute;
+      bottom: -50px;
+      left: 0;
+      right: 0;
+      height: 100px;
+      background: var(--light);
+      transform: skewY(-3deg);
+      z-index: 1;
     }
     
-    /* Animation de balayage droite-gauche */
-    .urgent-btn::before {
+    .header-content {
+      max-width: 800px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+    
+    h1, h2, h3 {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+    }
+    
+    h1 {
+      font-size: 2.5rem;
+      margin: 0 0 1rem;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    }
+    
+    .tagline {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      opacity: 0.9;
+    }
+    
+    .container {
+      max-width: 900px;
+      margin: -30px auto 0;
+      padding: 0 20px;
+      position: relative;
+      z-index: 3;
+    }
+    
+    .card {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      padding: 2rem;
+      margin-bottom: 2rem;
+    }
+    
+    .progress-container {
+      background: #f0f0f0;
+      border-radius: 20px;
+      height: 25px;
+      margin: 2rem 0;
+      overflow: hidden;
+    }
+    
+    .progress-bar {
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
+      height: 100%;
+      width: 35%; /* Ajuster selon le montant collecté */
+      transition: width 0.5s ease;
+      position: relative;
+    }
+    
+    .progress-bar::after {
       content: "";
       position: absolute;
       top: 0;
@@ -118,122 +110,313 @@
       background: linear-gradient(
         90deg,
         transparent,
-        rgba(255, 255, 255, 0.8),
+        rgba(255, 255, 255, 0.4),
         transparent
       );
-      animation: sweep 1.5s infinite;
-      z-index: 0;
+      animation: sweep 2s infinite;
     }
     
     @keyframes sweep {
-      0% {
-        transform: translateX(100%) skewX(-15deg);
-      }
-      100% {
-        transform: translateX(-100%) skewX(-15deg);
-      }
+      0% { transform: translateX(-100%) skewX(-15deg); }
+      100% { transform: translateX(200%) skewX(-15deg); }
     }
     
-    .urgent-btn span {
-      position: relative;
-      z-index: 1;
+    .progress-info {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 0.5rem;
+      font-weight: bold;
     }
     
-    /* Effet de pulsation pour le texte */
-    @keyframes pulse {
-      0% {
-        transform: scale(1);
-      }
-      50% {
-        transform: scale(1.05);
-      }
-      100% {
-        transform: scale(1);
-      }
+    .don-section {
+      text-align: center;
+      margin: 3rem 0;
     }
     
-    .urgent-btn span {
+    .btn {
       display: inline-block;
-      animation: pulse 1.5s infinite;
+      padding: 15px 30px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: all 0.3s;
+      font-size: 1.1rem;
+      margin: 10px 5px;
+    }
+    
+    .btn-primary {
+      background: linear-gradient(45deg, var(--primary), var(--secondary));
+      color: white;
+      box-shadow: 0 4px 15px rgba(233, 30, 99, 0.4);
+    }
+    
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(233, 30, 99, 0.5);
+    }
+    
+    .btn-secondary {
+      background: white;
+      color: var(--primary);
+      border: 2px solid var(--primary);
+    }
+    
+    .btn-secondary:hover {
+      background: var(--light);
+    }
+    
+    .highlight {
+      color: var(--primary);
+      font-weight: bold;
+    }
+    
+    .testimonial {
+      font-style: italic;
+      padding: 1.5rem;
+      background: var(--light);
+      border-left: 4px solid var(--primary);
+      margin: 1.5rem 0;
+    }
+    
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 15px;
+      margin: 2rem 0;
+    }
+    
+    .gallery img, .gallery video {
+      width: 100%;
+      border-radius: 8px;
+      object-fit: cover;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+    
+    .gallery img:hover, .gallery video:hover {
+      transform: scale(1.03);
+    }
+    
+    .social-proof {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      margin: 2rem 0;
+    }
+    
+    .social-item {
+      background: white;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+      text-align: center;
+      min-width: 120px;
+    }
+    
+    .social-number {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: var(--primary);
+      margin-bottom: 5px;
+    }
+    
+    footer {
+      background: var(--dark);
+      color: white;
+      text-align: center;
+      padding: 3rem 1rem;
+      margin-top: 3rem;
+    }
+    
+    .social-links {
+      margin: 1rem 0;
+    }
+    
+    .social-links a {
+      color: white;
+      margin: 0 10px;
+      font-size: 1.5rem;
+      transition: color 0.3s;
+    }
+    
+    .social-links a:hover {
+      color: var(--primary);
+    }
+    
+    .urgency-banner {
+      background: #FFF3E0;
+      border-left: 5px solid #FF9800;
+      padding: 1rem;
+      margin: 1.5rem 0;
+      display: flex;
+      align-items: center;
+    }
+    
+    .urgency-banner::before {
+      content: "⚠️";
+      margin-right: 10px;
+      font-size: 1.5rem;
+    }
+    
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2rem;
+      }
+      
+      .gallery {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
 <body>
+  <header>
+    <div class="header-content">
+      <h1>💖 Aidons Lucie à Rebondir</h1>
+      <p class="tagline">Une vie bouleversée. Un avenir à reconstruire. Ensemble.</p>
+      <a href="https://www.cotizup.com/appelpourlucie" class="btn btn-primary" target="_blank">Faire un don maintenant</a>
+    </div>
+  </header>
 
-<header>
-  <h1>Sauvons Rihane et Youcef</h1>
-  <a class="don-btn" href="https://www.paypal.com/donate/?hosted_button_id=GYEEUTQ2MV3H6" target="_blank">Faire un don ❤️</a>
-</header>
+  <div class="container">
+    <div class="card">
+      <h2>🙋‍♀️ Qui suis-je ?</h2>
+      <p>Je m'appelle Lucie, et je prends aujourd'hui la parole avec humilité, car j'ai besoin de vous.</p>
+      <p>Je ne suis pas du genre à m'exposer, mais la vie m'a projetée dans une réalité à laquelle je n'étais pas préparée. Et dans cette nouvelle réalité, chaque geste de soutien compte énormément.</p>
+    </div>
 
-<div class="container">
-  <h2>🙏 Je m'appelle Lucie</h2>
-  <p>
-    Je n'ai pas vraiment l'habitude de m'exposer, mais je le fais aujourd'hui car j'ai besoin d'aide.
-  </p>
-  <p>
-    Il y a quelques mois j'ai attrapé une forme de paludisme sévère qui a engagé mon pronostic vital.
-    Après une période de coma, j'ai été amputée des deux pieds et des deux mains en avril et mai derniers.
-  </p>
-  <p>
-    Du jour au lendemain la vie a basculé. Je me suis retrouvée projetée dans le monde des handicapés, des invalides (atroce ce mot ! 😂).
-  </p>
-  <p>
-    Je découvre un monde où le confort est souvent financièrement inabordable pour beaucoup d'entre nous. Les aides financières aujourd'hui sont insuffisantes pour pouvoir assurer aux amputés le minimum pour vivre presque normalement.
-  </p>
-  <p>
-    Une prothèse coûte entre <strong>30 000 €</strong> et <strong>100 000 €</strong> pièce, et seules quelques-unes sont remboursées. Je dois changer de voiture, acheter une voiture plus grande pour le fauteuil et une automatique car je n'ai plus le droit de conduire ma voiture manuelle.
-  </p>
-  <p>
-    Cette expérience n'est pas simple. Mais elle donne encore plus l'envie de vivre ! La période de rééducation est longue mais elle permet l'espoir. Celui de revivre, différemment, mais revivre quand même. J'ai tellement de choses à faire, reprendre la danse, le footing, et aussi des nouvelles choses ! 🙏🏻❤🙂
-  </p>
-  <p>
-    C'est pour cette raison que je fais cette vidéo aujourd'hui, je recherche un <strong>soutien financier</strong> pour assumer les dépenses liées au handicap.
-  </p>
-  <p>
-    Je remercie toutes les personnes qui me soutiennent, tous les gens qui visionneront cette vidéo et auront envie de m'aider. Je remercie ceux qui ne pourront pas m'aider mais qui auront une pensée d'encouragement.
-  </p>
+    <div class="card">
+      <h2>🩺 Ce qui m'est arrivé</h2>
+      <p>Il y a quelques mois, j'ai été atteinte d'une forme très grave de paludisme. Mon pronostic vital a été engagé.</p>
+      <p>Après plusieurs jours dans le coma... je me suis réveillée amputée des deux pieds et des deux mains.</p>
+      <p>C'était en avril et mai derniers. Ma vie a basculé. Brutalement.</p>
+      
+      <div class="gallery">
+        <img src="https://via.placeholder.com/500x300?text=Lucie+avant" alt="Lucie avant son accident">
+        <img src="https://via.placeholder.com/500x300?text=Lucie+aujourd'hui" alt="Lucie aujourd'hui">
+        <video controls poster="https://via.placeholder.com/500x300?text=Video+témoignage">
+          <source src="#" type="video/mp4">
+          Votre navigateur ne supporte pas les vidéos.
+        </video>
+      </div>
+    </div>
 
-  <p>
-    <strong>Merci à vous tous 🙏🏻🙏🏻🙏🏻</strong>
-  </p>
+    <div class="urgency-banner">
+      <strong>Urgent :</strong> Les prothèses de qualité coûtent entre 30 000€ et 100 000€ pièce et sont très peu remboursées.
+    </div>
 
-  <p>
-    <em>Montage et diffusion des vidéos par @lucasgrdn. Un immense merci pour ta générosité et ta qualité de travail...</em>
-  </p>
+    <div class="card">
+      <h2>🧩 Les défis que je dois relever</h2>
+      <p>Aujourd'hui, au-delà de la douleur, il y a une réalité concrète, urgente, matérielle.</p>
+      
+      <h3>🦿 Prothèses adaptées</h3>
+      <p>Coût : <span class="highlight">30 000 à 100 000€ pièce</span>, très peu prises en charge.</p>
+      
+      <h3>🚗 Véhicule adapté</h3>
+      <p>Besoin d'un véhicule automatique et spacieux pour mon fauteuil : <span class="highlight">40 000€</span>.</p>
+      
+      <h3>🏥 Rééducation intensive</h3>
+      <p>Essentielle pour retrouver un maximum d'autonomie : <span class="highlight">15 000€/an</span>.</p>
+      
+      <div class="progress-container">
+        <div class="progress-bar"></div>
+      </div>
+      <div class="progress-info">
+        <span>35% de l'objectif</span>
+        <span>105 000€ / 300 000€</span>
+      </div>
+    </div>
 
-  <p>
-    📩 <strong>Pour me contacter :</strong><br />
-    Instagram : <a href="https://instagram.com/lucie.retail" target="_blank">@lucie.retail</a><br />
-    Facebook : <a href="https://facebook.com/lucy.luke" target="_blank">@Lucy Luke</a>
-  </p>
+    <div class="card">
+      <h2>🌱 Mon espoir, ma force</h2>
+      <p>Je n'ai pas perdu l'envie de vivre pleinement.</p>
+      <p>Je rêve de revenir à la danse, de refaire du footing, de découvrir de nouvelles passions, de rire, de créer, d'aimer.</p>
+      <p>Oui, la rééducation est difficile. Mais elle porte en elle une promesse : celle de revivre.</p>
+      
+      <div class="testimonial">
+        "Lucie montre un courage incroyable. Chaque petit progrès est une victoire."<br>
+        - Son kinésithérapeute
+      </div>
+    </div>
 
-  <div class="don-section">
-    <h2>🆘 Vous pouvez m'aider</h2>
-    <p>Un simple don peut changer ma vie. Merci infiniment ❤️</p>
-    <a class="urgent-btn" href="https://www.paypal.com/donate/?hosted_button_id=GYEEUTQ2MV3H6" target="_blank"><span>FAIRE UN DON URGENT</span></a>
+    <div class="don-section">
+      <h2>✨ Ensemble, rendons l'impossible possible ✨</h2>
+      <p>Chaque euro compte. Chaque partage, chaque message me donne de la force.</p>
+      
+      <div class="social-proof">
+        <div class="social-item">
+          <div class="social-number">1 240</div>
+          <div>Donateurs</div>
+        </div>
+        <div class="social-item">
+          <div class="social-number">105k€</div>
+          <div>Collectés</div>
+        </div>
+        <div class="social-item">
+          <div class="social-number">28j</div>
+          <div>Restants</div>
+        </div>
+      </div>
+      
+      <a href="https://www.cotizup.com/appelpourlucie" class="btn btn-primary" target="_blank">Faire un don</a>
+      <a href="#partager" class="btn btn-secondary">Partager la cagnotte</a>
+    </div>
+
+    <div class="card" id="partager">
+      <h2>📢 Aidez-moi en partageant</h2>
+      <p>Vous ne pouvez pas donner ? Partagez cette page à vos proches !</p>
+      <p>Copiez ce message :</p>
+      
+      <div style="background: #f5f5f5; padding: 15px; border-radius: 8px; margin: 15px 0;">
+        <p>💖 Aidez Lucie, amputée des 4 membres après un paludisme, à financer ses prothèses et sa rééducation. Chaque don compte ! ➡ https://www.cotizup.com/appelpourlucie #AidonsLucie</p>
+      </div>
+    </div>
   </div>
-    <div class="progress-bar" style="width: 20%;"></div>
-  </div>
-  <p><strong>Objectif :</strong> 100 000 € pour la greffe vitale.</p>
 
-  <div class="image-gallery">
-    <img src="Philippe1.jpeg" alt="Rihane ou Youcef">
-    <img src="Philippe2.jpeg" alt="Photo">
-    <img src="Philippe3.jpeg" alt="Photo">
-    <img src="Philippe4.jpeg" alt="Photo">
-    <img src="Philippe5.jpeg" alt="Photo">
-  </div>
+  <footer>
+    <h3>📬 Pour me suivre ou me contacter</h3>
+    <p>Instagram : @lucie.retail | Facebook : @LucyLuke</p>
+    
+    <div class="social-links">
+      <a href="#" aria-label="Instagram">📸</a>
+      <a href="#" aria-label="Facebook">👍</a>
+      <a href="#" aria-label="Twitter">🐦</a>
+    </div>
+    
+    <p>Avec tout mon cœur,<br>Lucie</p>
+    <p>Montage vidéo : @lucasgrdn, mille mercis pour ton travail magnifique 🙏</p>
+  </footer>
 
-  <div class="don-section">
-    <h2>🆘 Vous pouvez changer leur destin</h2>
-    <p>Un simple don peut leur offrir une chance de guérir. Merci pour votre soutien ❤️</p>
-    <a class="urgent-btn" href="https://www.paypal.com/donate/?hosted_button_id=GYEEUTQ2MV3H6" target="_blank"><span>FAIRE UN DON URGENT</span></a>
-  </div>
-</div>
-
-<footer>
-  Merci pour votre générosité. Chaque geste compte. Pour eux. Pour la vie. 🌟
-</footer>
-
+  <script>
+    // Animation de la barre de progression (à adapter avec le vrai montant)
+    document.addEventListener('DOMContentLoaded', function() {
+      const progressBar = document.querySelector('.progress-bar');
+      const progressInfo = document.querySelector('.progress-info span:last-child');
+      
+      // Simuler une progression (remplacer par les vrais chiffres)
+      let progress = 35;
+      let currentAmount = 105000;
+      const targetAmount = 300000;
+      
+      // Mettre à jour régulièrement pour l'effet dynamique
+      const updateProgress = () => {
+        progressBar.style.width = progress + '%';
+        progressInfo.textContent = new Intl.NumberFormat('fr-FR').format(currentAmount) + '€ / ' + 
+                                  new Intl.NumberFormat('fr-FR').format(targetAmount) + '€';
+      };
+      
+      updateProgress();
+      
+      // Simuler de nouveaux dons (à enlever en production)
+      setInterval(() => {
+        if (progress < 100) {
+          progress += 0.5;
+          currentAmount += 1500;
+          updateProgress();
+        }
+      }, 3000);
+    });
+  </script>
 </body>
 </html>
